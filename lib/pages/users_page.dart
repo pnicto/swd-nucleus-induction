@@ -47,9 +47,28 @@ class _UsersPageState extends State<UsersPage> {
     return isLoaded
         ? (ListView.builder(
             itemBuilder: (context, index) {
-              return Card(
-                elevation: 5,
-                child: Text(users![index].name),
+              return Column(
+                children: [
+                  Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 4, horizontal: 3),
+                    child: ListTile(
+                      tileColor: Colors.blue.shade400,
+                      textColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      leading: const Icon(
+                        Icons.person,
+                        color: Colors.black,
+                      ),
+                      title: Text(users![index].name),
+                      subtitle: Text(users![index].email),
+                    ),
+                  ),
+                  // const SizedBox(
+                  //   height: 4,
+                  // )
+                ],
               );
             },
             itemCount: users?.length,
