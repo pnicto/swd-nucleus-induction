@@ -6,13 +6,24 @@ class MainDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          Container(
-            height: 100,
-            width: double.infinity,
-            color: Theme.of(context).primaryColor,
-            child: const Center(
-              child: Text('JSON APi'),
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue.shade200,
             ),
+            child: const Center(
+              child: Text(
+                'JSON API',
+                style: TextStyle(fontSize: 26),
+              ),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.smartphone),
+            title: Text('Main app'),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('About me'),
           ),
         ],
       ),
