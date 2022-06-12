@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Users'),
         ),
-        drawer: MainDrawer(),
-        body: UsersPage(),
+        drawer: const MainDrawer(),
+        body: const UsersPage(),
       ),
       routes: {
         UserDetailsPage.routeName: (context) => const UserDetailsPage(),

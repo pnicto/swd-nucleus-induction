@@ -4,10 +4,7 @@ import '../models/album_model.dart';
 class DisplayAlbums extends StatelessWidget {
   final List<Album>? albums;
   final int userId;
-  DisplayAlbums(
-    this.albums,
-    this.userId,
-  );
+  const DisplayAlbums(this.albums, this.userId, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -4,10 +4,7 @@ import '../models/post_model.dart';
 class DisplayPosts extends StatelessWidget {
   final List<Post>? posts;
   final int userId;
-  DisplayPosts(
-    this.posts,
-    this.userId,
-  );
+  const DisplayPosts(this.posts, this.userId, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
