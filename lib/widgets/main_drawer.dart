@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_api_app/pages/about_me_page.dart';
+import '../pages/about_me_page.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);

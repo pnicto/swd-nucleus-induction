@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_api_app/main.dart';
+import '../main.dart';
 import '../widgets/main_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 

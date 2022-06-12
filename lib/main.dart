@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:json_api_app/pages/about_me_page.dart';
-import 'package:json_api_app/pages/user_details_page.dart';
+import 'pages/about_me_page.dart';
+import 'pages/user_details_page.dart';
 
 import 'pages/users_page.dart';
 import 'widgets/main_drawer.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         UserDetailsPage.routeName: (context) => const UserDetailsPage(),
-        AboutMe.routeName: (context) => const AboutMe()
+        AboutMe.routeName: (context) => AboutMe()
       },
     );
   }
