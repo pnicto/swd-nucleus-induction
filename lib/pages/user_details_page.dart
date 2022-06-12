@@ -4,6 +4,7 @@ import '../fetch_content.dart';
 import '../models/album_model.dart';
 import '../models/post_model.dart';
 import '../widgets/display_posts.dart';
+import '../widgets/display_albums.dart';
 
 class UserDetailsPage extends StatefulWidget {
   static const routeName = '/user-details';
@@ -88,9 +89,24 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                     margin: const EdgeInsets.all(6),
                     padding: const EdgeInsets.all(6),
                     width: double.infinity,
-                    height: 275,
+                    height: 250,
                     child: DisplayPosts(
                       posts,
+                      user['id'] as int,
+                    ),
+                  ),
+                  Text(
+                    '${user['name']}\'s Albums',
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
+                    width: double.infinity,
+                    height: 200,
+                    child: DisplayAlbums(
+                      albums,
                       user['id'] as int,
                     ),
                   ),
