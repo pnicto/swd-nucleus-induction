@@ -79,11 +79,16 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                       ),
                     ),
                   ),
+                  Text(
+                    '${user['name']}\'s Posts',
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                   Container(
                     margin: const EdgeInsets.all(6),
                     padding: const EdgeInsets.all(6),
                     width: double.infinity,
-                    height: 250,
+                    height: 275,
                     child: DisplayPosts(
                       posts,
                       user['id'] as int,
