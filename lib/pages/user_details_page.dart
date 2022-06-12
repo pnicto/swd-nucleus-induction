@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../fetch_content.dart';
+import '../models/album_model.dart';
 import '../models/post_model.dart';
+import '../widgets/display_posts.dart';
 
 class UserDetailsPage extends StatefulWidget {
   static const routeName = '/user-details';
@@ -17,11 +19,12 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
   var isLoaded = false;
 
   List<Post>? posts;
-  // Function to fetch all posts
+  List<Album>? albums;
 
   fetchPosts() async {
     posts = await fetchPostsFromURL();
-    if (posts != null) {
+    albums = await fetchAlbumsFromURL();
+    if (posts != null && albums != null) {
       setState(() {
         isLoaded = true;
       });
@@ -74,6 +77,16 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                           ],
                         ),
                       ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
+                    width: double.infinity,
+                    height: 250,
+                    child: DisplayPosts(
+                      posts,
+                      user['id'] as int,
                     ),
                   ),
                 ],
