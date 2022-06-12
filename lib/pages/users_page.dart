@@ -2,9 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:json_api_app/pages/user_details_page.dart';
 import '../models/user_model.dart';
 
 class UsersPage extends StatefulWidget {
+  const UsersPage({Key? key}) : super(key: key);
+
   @override
   State<UsersPage> createState() => _UsersPageState();
 }
@@ -53,10 +56,17 @@ class _UsersPageState extends State<UsersPage> {
             itemBuilder: (context, index) {
               return Column(
                 children: [
+                  // Container to add margin for list tiles
                   Container(
                     margin:
                         const EdgeInsets.symmetric(vertical: 4, horizontal: 3),
                     child: ListTile(
+                      // Func to push user details page
+                      onTap: () {
+                        Navigator.of(context).pushNamed(
+                            UserDetailsPage.routeName,
+                            arguments: users![index]);
+                      },
                       tileColor: Colors.blue.shade400,
                       textColor: Colors.white,
                       shape: RoundedRectangleBorder(
