@@ -10,9 +10,11 @@ class UsersPage extends StatefulWidget {
 }
 
 class _UsersPageState extends State<UsersPage> {
+  // var to control Loading screen
   var isLoaded = false;
 
   List<User>? users;
+  // Function to fetch  users from the url
   Future<List<User>?> fetchUser() async {
     final response = await http.get(
       Uri.parse('https://jsonplaceholder.typicode.com/users'),
@@ -36,6 +38,7 @@ class _UsersPageState extends State<UsersPage> {
     }
   }
 
+// Calling the function in the beginning
   @override
   void initState() {
     fetchUsers();
@@ -44,6 +47,7 @@ class _UsersPageState extends State<UsersPage> {
 
   @override
   Widget build(BuildContext context) {
+    // returning Loading screen or content depending on isLoaded
     return isLoaded
         ? (ListView.builder(
             itemBuilder: (context, index) {
@@ -56,7 +60,8 @@ class _UsersPageState extends State<UsersPage> {
                       tileColor: Colors.blue.shade400,
                       textColor: Colors.white,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       leading: const Icon(
                         Icons.person,
                         color: Colors.black,
@@ -65,9 +70,6 @@ class _UsersPageState extends State<UsersPage> {
                       subtitle: Text(users![index].email),
                     ),
                   ),
-                  // const SizedBox(
-                  //   height: 4,
-                  // )
                 ],
               );
             },
