@@ -37,7 +37,10 @@ class _UsersPageState extends State<UsersPage> {
         ? (ListView.builder(
             itemBuilder: (context, index) {
               return Container(
-                margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+                margin: const EdgeInsets.symmetric(
+                  vertical: 4,
+                  horizontal: 30.0,
+                ),
                 child: GestureDetector(
                   child: Column(
                     children: [
@@ -47,14 +50,11 @@ class _UsersPageState extends State<UsersPage> {
                         ),
                         color: Colors.lightBlueAccent,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Icon(
-                                Icons.person,
-                              ),
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,18 +62,35 @@ class _UsersPageState extends State<UsersPage> {
                                   Text(
                                     users![index].name,
                                     style: const TextStyle(
-                                      color: Colors.white,
                                       fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    users![index].username,
+                                    style: const TextStyle(
+                                      color: Colors.blueGrey,
+                                      fontSize: 14,
                                     ),
                                   ),
                                   Text(
                                     users![index].email,
                                     style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
+                                      color: Colors.blueGrey,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  Text(
+                                    users![index].phone,
+                                    style: const TextStyle(
+                                      color: Colors.blueGrey,
+                                      fontSize: 14,
                                     ),
                                   ),
                                 ],
+                              ),
+                              const Icon(
+                                Icons.person,
                               ),
                             ],
                           ),
