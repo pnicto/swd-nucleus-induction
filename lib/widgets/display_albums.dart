@@ -20,13 +20,6 @@ class DisplayAlbums extends StatelessWidget {
             margin: const EdgeInsets.all(5),
             child: Column(
               children: [
-                const Text(
-                  'Title',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
                 Text(
                   currentUserAlbums![index].title,
                   style: const TextStyle(

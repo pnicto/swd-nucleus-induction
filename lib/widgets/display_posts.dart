@@ -20,22 +20,25 @@ class DisplayPosts extends StatelessWidget {
             margin: const EdgeInsets.all(5),
             child: Column(
               children: [
-                const Text(
-                  'Title',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    currentUserPosts![index].title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  textAlign: TextAlign.left,
                 ),
-                Text(currentUserPosts![index].title),
-                const Text(
-                  'Body',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    currentUserPosts[index].body,
+                    style: const TextStyle(),
                   ),
-                  textAlign: TextAlign.left,
                 ),
-                Text(currentUserPosts[index].body),
               ],
             ),
           ),
