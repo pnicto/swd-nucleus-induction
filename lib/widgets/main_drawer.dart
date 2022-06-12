@@ -24,14 +24,14 @@ class MainDrawer extends StatelessWidget {
             leading: const Icon(Icons.smartphone),
             title: const Text('Main app'),
             onTap: () {
-              Navigator.of(context).pushNamed('/');
+              Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text('About me'),
             onTap: () {
-              Navigator.of(context).pushNamed(AboutMe.routeName);
+              Navigator.of(context).pushReplacementNamed(AboutMe.routeName);
             },
           ),
         ],
