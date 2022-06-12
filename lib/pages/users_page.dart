@@ -36,43 +36,63 @@ class _UsersPageState extends State<UsersPage> {
     return isLoaded
         ? (ListView.builder(
             itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  // Container to add margin for list tiles
-                  Container(
-                    margin:
-                        const EdgeInsets.symmetric(vertical: 4, horizontal: 3),
-                    child: ListTile(
-                      // Func to push user details page
-                      onTap: () {
-                        Navigator.of(context).pushNamed(
-                          UserDetailsPage.routeName,
-                          arguments: {
-                            'id': users![index].id,
-                            'name': users![index].name,
-                            'username': users![index].username,
-                            'email': users![index].email,
-                            'phone': users![index].phone,
-                            'website': users![index].website,
-                            'company': users![index].company.name,
-                            'address': users![index].address.city,
-                          },
-                        );
-                      },
-                      tileColor: Colors.blue.shade400,
-                      textColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
+              return Container(
+                margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+                child: GestureDetector(
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    color: Colors.lightBlueAccent,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(
+                            Icons.person,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                users![index].name,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              Text(
+                                users![index].email,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                      leading: const Icon(
-                        Icons.person,
-                        color: Colors.black,
-                      ),
-                      title: Text(users![index].name),
-                      subtitle: Text(users![index].email),
                     ),
                   ),
-                ],
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                      UserDetailsPage.routeName,
+                      arguments: {
+                        'id': users![index].id,
+                        'name': users![index].name,
+                        'username': users![index].username,
+                        'email': users![index].email,
+                        'phone': users![index].phone,
+                        'website': users![index].website,
+                        'company': users![index].company.name,
+                        'address': users![index].address.city,
+                      },
+                    );
+                  },
+                ),
               );
             },
             itemCount: users?.length,
