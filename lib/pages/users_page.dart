@@ -86,7 +86,7 @@ class _UsersPageState extends State<UsersPage> {
                     ],
                   ),
                   onTap: () {
-                    Navigator.of(context).pushReplacementNamed(
+                    Navigator.of(context).pushNamed(
                       UserDetailsPage.routeName,
                       arguments: {
                         'id': users![index].id,
