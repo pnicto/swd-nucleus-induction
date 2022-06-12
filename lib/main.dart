@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:json_api_app/pages/user_details_page.dart';
 
 import 'pages/users_page.dart';
 import 'widgets/main_drawer.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         drawer: MainDrawer(),
         body: UsersPage(),
       ),
+      routes: {
+        UserDetailsPage.routeName: (context) => const UserDetailsPage(),
+      },
     );
   }
 }
