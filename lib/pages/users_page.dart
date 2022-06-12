@@ -2,8 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:json_api_app/pages/user_details_page.dart';
+
 import '../models/user_model.dart';
+import 'user_details_page.dart';
 
 class UsersPage extends StatefulWidget {
   const UsersPage({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _UsersPageState extends State<UsersPage> {
 
       return parsed.map<User>((json) => User.fromJson(json)).toList();
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to load');
     }
   }
 
