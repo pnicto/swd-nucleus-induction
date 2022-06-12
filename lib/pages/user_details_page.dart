@@ -39,10 +39,13 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
   }
 
   Widget buildText(String content) {
-    return Text(
-      content,
-      style: const TextStyle(fontSize: 18),
-      textAlign: TextAlign.center,
+    return Container(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        content,
+        style: const TextStyle(fontSize: 15),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 
@@ -63,12 +66,25 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   Container(
                     alignment: Alignment.center,
                     child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       elevation: 5,
                       child: Container(
+                        width: 300,
                         padding: const EdgeInsets.all(15),
                         child: Column(
                           children: [
-                            buildText(user['name'] as String),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                user['name'] as String,
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                             buildText(user['username'] as String),
                             buildText(user['email'] as String),
                             buildText(user['phone'] as String),
@@ -79,6 +95,9 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         ),
                       ),
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Text(
                     '${user['name']}\'s Posts',
