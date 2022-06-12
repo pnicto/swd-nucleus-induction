@@ -29,15 +29,17 @@ class AboutMe extends StatelessWidget {
               backgroundImage: AssetImage('assets/images/spongebob.webp'),
               radius: 100,
             ),
-            Card(
-              elevation: 5,
-              child: Container(
-                padding: const EdgeInsets.all(8.0),
-                margin: const EdgeInsets.only(top: 10),
-                child: const Text(
-                  'Hi, I am Dharanikanth studying in BITS Pilani, Hyderabad campus.',
-                  style: TextStyle(
-                    fontSize: 20,
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Card(
+                elevation: 5,
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Text(
+                    'Hi, I am Dharanikanth studying in BITS Pilani, Hyderabad campus.',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),
@@ -47,43 +49,30 @@ class AboutMe extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  'I don\'t have many hobbies. I usually listen to music',
+                  'I don\'t have many hobbies. I usually listen to music.',
                   style: TextStyle(
                     fontSize: 20,
                   ),
                 ),
               ),
             ),
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    const Text(
-                      'This is my github',
-                      style: TextStyle(fontSize: 20),
+            TextButton(
+              onPressed: _launchUrl,
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.link,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Github',
+                      textAlign: TextAlign.center,
                     ),
-                    TextButton(
-                      onPressed: _launchUrl,
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.link,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Text(
-                              'Github',
-                              textAlign: TextAlign.center,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  )
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
