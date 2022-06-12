@@ -1,8 +1,10 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../models/user_model.dart';
-import '../models/post_model.dart';
+
+import 'package:http/http.dart' as http;
+
 import '../models/album_model.dart';
+import '../models/post_model.dart';
+import '../models/user_model.dart';
 
 List<User>? users;
 // Function to fetch  users from the url
