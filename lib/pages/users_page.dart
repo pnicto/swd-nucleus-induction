@@ -64,8 +64,18 @@ class _UsersPageState extends State<UsersPage> {
                       // Func to push user details page
                       onTap: () {
                         Navigator.of(context).pushNamed(
-                            UserDetailsPage.routeName,
-                            arguments: users![index]);
+                          UserDetailsPage.routeName,
+                          arguments: {
+                            'id': users![index].id,
+                            'name': users![index].name,
+                            'username': users![index].username,
+                            'email': users![index].email,
+                            'phone': users![index].phone,
+                            'website': users![index].website,
+                            'company': users![index].company.name,
+                            'address': users![index].address.city,
+                          },
+                        );
                       },
                       tileColor: Colors.blue.shade400,
                       textColor: Colors.white,
