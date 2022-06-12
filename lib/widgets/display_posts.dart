@@ -11,9 +11,16 @@ class DisplayPosts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentUserPosts = posts?.where((post) => post.id == userId);
-    return Container(
-      child: Text('Display Posts '),
+    final currentUserPosts = posts?.where((post) => post.userId == userId);
+    print(currentUserPosts);
+    return ListView.builder(
+      itemBuilder: ((context, index) {
+        return Card(
+          elevation: 5,
+          child: Text('Hi'),
+        );
+      }),
+      itemCount: currentUserPosts?.length,
     );
   }
 }
