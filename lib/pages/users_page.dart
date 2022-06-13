@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/user_model.dart';
 
 import '../fetch_content.dart';
 import 'user_details_page.dart';
@@ -13,7 +14,7 @@ class UsersPage extends StatefulWidget {
 class _UsersPageState extends State<UsersPage> {
   // var to control Loading screen
   var isLoaded = false;
-
+  List<User>? users;
   fetchUsers() async {
     users = await fetchUser();
     if (users != null) {
