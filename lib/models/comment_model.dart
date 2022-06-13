@@ -8,28 +8,32 @@ String commentToJson(List<Comment> data) =>
 
 class Comment {
   Comment({
-    required this.userId,
+    required this.postId,
     required this.id,
-    required this.title,
+    required this.name,
+    required this.email,
     required this.body,
   });
 
-  int userId;
+  int postId;
   int id;
-  String title;
+  String name;
+  String email;
   String body;
 
   factory Comment.fromJson(Map<String, dynamic> json) => Comment(
-        userId: json["userId"],
+        postId: json["postId"],
         id: json["id"],
-        title: json["title"],
+        name: json["name"],
+        email: json["email"],
         body: json["body"],
       );
 
   Map<String, dynamic> toJson() => {
-        "userId": userId,
+        "postId": postId,
         "id": id,
-        "title": title,
+        "name": name,
+        "email": email,
         "body": body,
       };
 }
