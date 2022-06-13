@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:json_api_app/pages/post_comments_page.dart';
+import 'pages/post_comments_page.dart';
 
 import 'pages/about_me_page.dart';
 import 'pages/user_details_page.dart';
