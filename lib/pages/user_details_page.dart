@@ -97,6 +97,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         ),
                       ),
                     ),
+                    Divider(),
                     const SizedBox(
                       height: 10,
                     ),
@@ -115,6 +116,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         user['id'] as int,
                       ),
                     ),
+                    Divider(),
                     Text(
                       '${user['name']}\'s Albums',
                       style: const TextStyle(
