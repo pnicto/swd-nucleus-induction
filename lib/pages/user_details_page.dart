@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../fetch_content.dart';
 import '../models/album_model.dart';
 import '../models/post_model.dart';
-import '../widgets/display_posts.dart';
 import '../widgets/display_albums.dart';
+import '../widgets/display_posts.dart';
 
 class UserDetailsPage extends StatefulWidget {
   static const routeName = '/user-details';
