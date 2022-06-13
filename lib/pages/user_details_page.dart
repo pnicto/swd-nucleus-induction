@@ -59,77 +59,79 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
             appBar: AppBar(
               title: Text("${user['name']}'s Details"),
             ),
-            body: Container(
-              margin: const EdgeInsets.symmetric(vertical: 4),
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      elevation: 5,
-                      child: Container(
-                        width: 300,
-                        padding: const EdgeInsets.all(15),
-                        child: Column(
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                user['name'] as String,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+            body: SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 4),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        elevation: 5,
+                        child: Container(
+                          width: 300,
+                          padding: const EdgeInsets.all(15),
+                          child: Column(
+                            children: [
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  user['name'] as String,
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                            ),
-                            buildText(user['username'] as String),
-                            buildText(user['email'] as String),
-                            buildText(user['phone'] as String),
-                            buildText(user['website'] as String),
-                            buildText(user['company'] as String),
-                            buildText(user['address'] as String),
-                          ],
+                              buildText(user['username'] as String),
+                              buildText(user['email'] as String),
+                              buildText(user['phone'] as String),
+                              buildText(user['website'] as String),
+                              buildText(user['company'] as String),
+                              buildText(user['address'] as String),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    '${user['name']}\'s Posts',
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(6),
-                    padding: const EdgeInsets.all(6),
-                    width: double.infinity,
-                    height: 250,
-                    child: DisplayPosts(
-                      posts,
-                      user['id'] as int,
+                    const SizedBox(
+                      height: 10,
                     ),
-                  ),
-                  Text(
-                    '${user['name']}\'s Albums',
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.all(6),
-                    padding: const EdgeInsets.all(6),
-                    width: double.infinity,
-                    height: 200,
-                    child: DisplayAlbums(
-                      albums,
-                      user['id'] as int,
+                    Text(
+                      '${user['name']}\'s Posts',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: const EdgeInsets.all(6),
+                      padding: const EdgeInsets.all(6),
+                      width: double.infinity,
+                      height: 250,
+                      child: DisplayPosts(
+                        posts,
+                        user['id'] as int,
+                      ),
+                    ),
+                    Text(
+                      '${user['name']}\'s Albums',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(6),
+                      padding: const EdgeInsets.all(6),
+                      width: double.infinity,
+                      height: 200,
+                      child: DisplayAlbums(
+                        albums,
+                        user['id'] as int,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
