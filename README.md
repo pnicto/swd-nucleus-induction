@@ -5,11 +5,12 @@ An app which I made as part of an induction process which uses [JSONPlaceholder]
 ## Images
 | Homepage  | User details | Drawer  | Extra task|
 | --- | --- |--- |----|
-| <img src="https://imgur.com/VBAJf4R.png" width="200" height="350"/> |<img src="https://imgur.com/p5PBd4w.png" width="200" height="350"/>  |<img src="https://imgur.com/snbPgzF.png" width="200" height="350"/>| <img src="https://imgur.com/KEneCxk.png" width="200" height="350"/>|
+| <img src="https://imgur.com/hHftBcP.png" width="200" height="350"/> |<img src="https://imgur.com/OBbedQx.png" width="200" height="350"/>  |<img src="https://imgur.com/3yfiEV3.png" width="200" height="350"/>| <img src="https://imgur.com/MmtOUmj.png" width="200" height="350"/>|
 
 
 
 
 ## TODO
 * ~~Extra task.~~
-* Using Themes effectively.
+* ~~Using Themes effectively.~~
+* Replacing ListviewBuilder with FutureBuilder.
