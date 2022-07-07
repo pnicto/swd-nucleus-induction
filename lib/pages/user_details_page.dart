@@ -51,9 +51,11 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    // assigning all args passed in navigator to user map
     final user =
         ModalRoute.of(context)!.settings.arguments as Map<String, Object>;
 
+// Logic for spinner and data
     return isLoaded
         ? Scaffold(
             appBar: AppBar(
@@ -70,6 +72,8 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
+
+                        // Details of the user
                         child: Container(
                           width: 300,
                           padding: const EdgeInsets.all(15),
@@ -106,6 +110,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                       padding: const EdgeInsets.all(6),
                       width: double.infinity,
                       height: 250,
+                      // Passing all posts fetched and userid into custom widget to display posts
                       child: DisplayPosts(
                         posts,
                         user['id'] as int,
@@ -121,6 +126,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                       padding: const EdgeInsets.all(6),
                       width: double.infinity,
                       height: 200,
+                      // Passing all albums fetched and userid into custom widget to display albums
                       child: DisplayAlbums(
                         albums,
                         user['id'] as int,
@@ -131,8 +137,11 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
               ),
             ),
           )
-        : const Center(
-            child: CircularProgressIndicator(),
+        : Scaffold(
+            appBar: AppBar(),
+            body: const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
   }
 }

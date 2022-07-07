@@ -107,8 +107,11 @@ class _UsersPageState extends State<UsersPage> {
             },
             itemCount: users?.length,
           ))
-        : (const Center(
-            child: CircularProgressIndicator(),
-          ));
+        : Scaffold(
+            appBar: AppBar(),
+            body: (const Center(
+              child: CircularProgressIndicator(),
+            )),
+          );
   }
 }

@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import '../models/comment_model.dart';
 
 class DisplayComments extends StatelessWidget {
-  final int postId;
   final List<Comment>? comments;
 
-  const DisplayComments(this.postId, this.comments, {Key? key})
-      : super(key: key);
+  const DisplayComments(this.comments, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    // List view builder to show comments
     return ListView.builder(
       itemCount: comments?.length,
       itemBuilder: ((context, index) {

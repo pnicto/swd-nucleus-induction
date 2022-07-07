@@ -13,13 +13,17 @@ class AboutMe extends StatelessWidget {
       appBar: AppBar(
         title: const Text('About me'),
       ),
-      drawer: const MainDrawer(),
+      drawer: const MainDrawer(), // MainDrawer custom widget
+
+      // SingleChildScrollView to keep make it work on landscape mode or smaller screens
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(10),
+          // Column with the main content
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Circle Avatar for spongebob image :)
               const CircleAvatar(
                 backgroundImage: AssetImage('assets/images/spongebob.webp'),
                 radius: 100,
@@ -27,6 +31,7 @@ class AboutMe extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // Content Card
               Card(
                 child: Container(
                   padding: const EdgeInsets.all(8.0),
@@ -41,6 +46,7 @@ class AboutMe extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // Content Card
               const Card(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
@@ -55,6 +61,7 @@ class AboutMe extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // Content Card
               const Card(
                 child: Padding(
                   padding: EdgeInsets.all(8.0),
@@ -69,16 +76,19 @@ class AboutMe extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
+              // Row to align the icons in center
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
+                    // on pressed action to launch the url
                     onPressed: () async {
                       final Uri url = Uri.parse(
                         'https://github.com/pnicto',
                       );
                       if (!await launchUrl(
                         url,
+                        // mode to launch them in apps
                         mode: LaunchMode.externalApplication,
                       )) {
                         throw 'Could not launch $url';
@@ -100,12 +110,14 @@ class AboutMe extends StatelessWidget {
                     ),
                   ),
                   TextButton(
+                    // on pressed action to launch the url
                     onPressed: () async {
                       final Uri url = Uri.parse(
                         'https://www.linkedin.com/in/dharanikanth-reddy-9386b623b/',
                       );
                       if (!await launchUrl(
                         url,
+                        // mode to launch them in apps
                         mode: LaunchMode.externalApplication,
                       )) {
                         throw 'Could not launch $url';

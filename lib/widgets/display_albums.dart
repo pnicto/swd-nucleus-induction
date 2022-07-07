@@ -8,6 +8,7 @@ class DisplayAlbums extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // segregating albums based on user id passed
     final List<Album>? currentUserAlbums =
         albums?.where((album) => album.userId == userId).toList();
     return ListView.builder(

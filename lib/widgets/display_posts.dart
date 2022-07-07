@@ -15,10 +15,12 @@ class DisplayPosts extends StatefulWidget {
 class _DisplayPostsState extends State<DisplayPosts> {
   @override
   Widget build(BuildContext context) {
+    // segregating posts based on user id passed
     final List<Post>? currentUserPosts =
         widget.posts?.where((post) => post.userId == widget.userId).toList();
     return ListView.builder(
       itemBuilder: ((context, index) {
+        // gesture detector for navigating to comments screen
         return GestureDetector(
           onTap: () {
             Navigator.of(context).pushNamed(

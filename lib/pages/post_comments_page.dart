@@ -33,23 +33,29 @@ class _PostCommentsState extends State<PostComments> {
 
   @override
   Widget build(BuildContext context) {
+    // PostID to separate the comments of the post
     final postId = ModalRoute.of(context)?.settings.arguments as int;
-
+    // segregated comments var
     final currentComments =
         comments?.where((comment) => comment.postId == postId).toList();
 
+// Logic to see if the data is loaded if loaded then display comments if not show circular progress indicator
     return isLoaded
         ? Scaffold(
             appBar: AppBar(
               title: const Text('Comments'),
             ),
+
+            // Passing those comments into custom widget to dislpay comments
             body: DisplayComments(
-              postId,
               currentComments,
             ),
           )
-        : const Center(
-            child: CircularProgressIndicator(),
+        : Scaffold(
+            appBar: AppBar(),
+            body: const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
   }
 }
