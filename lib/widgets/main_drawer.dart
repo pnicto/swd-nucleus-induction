@@ -8,29 +8,59 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.indigo.shade400,
       child: Column(
         children: [
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue.shade200,
-            ),
-            child: const Center(
+          const DrawerHeader(
+            child: Center(
               child: Text(
                 'JSON API',
-                style: TextStyle(fontSize: 26),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 36,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.smartphone),
-            title: const Text('Main app'),
+            leading: const Icon(
+              Icons.smartphone,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'Main app',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+              ),
+            ),
             onTap: () {
               Navigator.of(context).pushReplacementNamed('/');
             },
           ),
+          const Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            child: Divider(
+              color: Colors.white,
+              thickness: 1.1,
+              indent: 2,
+            ),
+          ),
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('About me'),
+            leading: const Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+            title: const Text(
+              'About me',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+              ),
+            ),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(AboutMe.routeName);
             },
