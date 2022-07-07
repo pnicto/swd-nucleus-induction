@@ -49,7 +49,6 @@ class _UsersPageState extends State<UsersPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        color: Colors.lightBlueAccent,
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Row(
@@ -62,31 +61,17 @@ class _UsersPageState extends State<UsersPage> {
                                 children: [
                                   Text(
                                     users![index].name,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    style:
+                                        Theme.of(context).textTheme.headline6,
                                   ),
                                   Text(
                                     users![index].username,
-                                    style: const TextStyle(
-                                      color: Colors.blueGrey,
-                                      fontSize: 14,
-                                    ),
                                   ),
                                   Text(
                                     users![index].email,
-                                    style: const TextStyle(
-                                      color: Colors.blueGrey,
-                                      fontSize: 14,
-                                    ),
                                   ),
                                   Text(
                                     users![index].phone,
-                                    style: const TextStyle(
-                                      color: Colors.blueGrey,
-                                      fontSize: 14,
-                                    ),
                                   ),
                                 ],
                               ),
@@ -98,7 +83,6 @@ class _UsersPageState extends State<UsersPage> {
                         ),
                       ),
                       const Divider(
-                        color: Colors.cyan,
                         thickness: 0.6,
                       ),
                     ],

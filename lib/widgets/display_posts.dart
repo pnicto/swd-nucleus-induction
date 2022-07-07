@@ -27,8 +27,6 @@ class _DisplayPostsState extends State<DisplayPosts> {
             );
           },
           child: Card(
-            color: Colors.greenAccent,
-            elevation: 5,
             child: Container(
               padding: const EdgeInsets.all(5),
               margin: const EdgeInsets.all(5),
@@ -38,9 +36,7 @@ class _DisplayPostsState extends State<DisplayPosts> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       currentUserPosts![index].title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
                   const SizedBox(

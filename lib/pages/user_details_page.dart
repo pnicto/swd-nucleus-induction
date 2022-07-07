@@ -70,7 +70,6 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        elevation: 5,
                         child: Container(
                           width: 300,
                           padding: const EdgeInsets.all(15),
@@ -80,10 +79,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   user['name'] as String,
-                                  style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: Theme.of(context).textTheme.headline5,
                                 ),
                               ),
                               buildText(user['username'] as String),
@@ -97,14 +93,13 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         ),
                       ),
                     ),
-                    Divider(),
+                    const Divider(),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       '${user['name']}\'s Posts',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                     Container(
                       margin: const EdgeInsets.all(6),
@@ -116,11 +111,10 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         user['id'] as int,
                       ),
                     ),
-                    Divider(),
+                    const Divider(),
                     Text(
                       '${user['name']}\'s Albums',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                     Container(
                       margin: const EdgeInsets.all(6),

@@ -16,22 +16,19 @@ class DisplayComments extends StatelessWidget {
         return Container(
           margin: const EdgeInsets.all(14),
           child: Card(
-            color: Colors.green,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            elevation: 5,
             child: Container(
               padding: const EdgeInsets.all(8),
               child: Column(
                 children: [
                   Text(
                     comments![index].name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.yellow,
-                      fontSize: 18,
-                    ),
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Text(
                     comments![index].email,
@@ -46,7 +43,6 @@ class DisplayComments extends StatelessWidget {
                     comments![index].body,
                     style: const TextStyle(
                       fontSize: 16,
-                      color: Colors.white,
                     ),
                   ),
                 ],

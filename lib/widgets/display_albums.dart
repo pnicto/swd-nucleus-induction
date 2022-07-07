@@ -13,8 +13,6 @@ class DisplayAlbums extends StatelessWidget {
     return ListView.builder(
       itemBuilder: ((context, index) {
         return Card(
-          color: Colors.blueAccent,
-          elevation: 5,
           child: Container(
             padding: const EdgeInsets.all(5),
             margin: const EdgeInsets.all(5),
@@ -22,9 +20,7 @@ class DisplayAlbums extends StatelessWidget {
               children: [
                 Text(
                   currentUserAlbums![index].title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ],
             ),
